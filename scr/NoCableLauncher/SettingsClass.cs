@@ -25,23 +25,6 @@ namespace NoCableLauncher
             [SettingsProvider(typeof(PortableSettingsProvider))]
             [UserScopedSetting]
             [DebuggerNonUserCode]
-            [DefaultSettingValue(Program.steamName)]
-            public string gamePath
-            {
-                get
-                {
-                    return ((string)(this["gamePath"]));
-                }
-                set
-                {
-                    this["gamePath"] = value;
-                }
-            }
-
-
-            [SettingsProvider(typeof(PortableSettingsProvider))]
-            [UserScopedSetting]
-            [DebuggerNonUserCode]
             [DefaultSettingValue("012DE6EC")]
             public string offsetVID
             {
@@ -164,23 +147,6 @@ namespace NoCableLauncher
                 set
                 {
                     this["GUID2"] = value;
-                }
-            }
-
-
-            [SettingsProvider(typeof(PortableSettingsProvider))]
-            [UserScopedSetting]
-            [DebuggerNonUserCode]
-            [DefaultSettingValue("True")]
-            public bool isSteam
-            {
-                get
-                {
-                    return ((bool)(this["isSteam"]));
-                }
-                set
-                {
-                    this["isSteam"] = value;
                 }
             }
 

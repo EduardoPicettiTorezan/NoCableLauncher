@@ -32,10 +32,6 @@ namespace NoCableLauncher
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
-            this.label1 = new System.Windows.Forms.Label();
-            this.pathTextBox = new System.Windows.Forms.TextBox();
-            this.steamCheckBox = new System.Windows.Forms.CheckBox();
-            this.browseButton = new System.Windows.Forms.Button();
             this.p1DeviceCombo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.p1vidTextBox = new System.Windows.Forms.TextBox();
@@ -45,15 +41,10 @@ namespace NoCableLauncher
             this.p1manualCheckBox = new System.Windows.Forms.CheckBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.offsetVidTextBox = new System.Windows.Forms.TextBox();
-            this.offsetPidTextBox = new System.Windows.Forms.TextBox();
             this.player1GroupBox = new System.Windows.Forms.GroupBox();
             this.refreshPictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.manualOffsetsCheckbox = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.multiplayerCheckBox = new System.Windows.Forms.CheckBox();
             this.inputDevButton = new System.Windows.Forms.Button();
             this.player2GroupBox = new System.Windows.Forms.GroupBox();
@@ -79,6 +70,12 @@ namespace NoCableLauncher
             this.singlePlayerGroupBox = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.manualOffsetsCheckbox = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.offsetVidTextBox = new System.Windows.Forms.TextBox();
+            this.offsetPidTextBox = new System.Windows.Forms.TextBox();
             this.player1GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshPictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -86,45 +83,8 @@ namespace NoCableLauncher
             ((System.ComponentModel.ISupportInitialize)(this.refreshPictureBox2)).BeginInit();
             this.spOnBoardGroupBox.SuspendLayout();
             this.singlePlayerGroupBox.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Path";
-            // 
-            // pathTextBox
-            // 
-            this.pathTextBox.Location = new System.Drawing.Point(79, 22);
-            this.pathTextBox.Name = "pathTextBox";
-            this.pathTextBox.Size = new System.Drawing.Size(233, 20);
-            this.pathTextBox.TabIndex = 1;
-            this.pathTextBox.TextChanged += new System.EventHandler(this._SettingsChanged);
-            // 
-            // steamCheckBox
-            // 
-            this.steamCheckBox.AutoSize = true;
-            this.steamCheckBox.Location = new System.Drawing.Point(79, 48);
-            this.steamCheckBox.Name = "steamCheckBox";
-            this.steamCheckBox.Size = new System.Drawing.Size(87, 17);
-            this.steamCheckBox.TabIndex = 3;
-            this.steamCheckBox.Text = "Steam Game";
-            this.steamCheckBox.UseVisualStyleBackColor = true;
-            this.steamCheckBox.CheckedChanged += new System.EventHandler(this.steamCheckBox_CheckedChanged);
-            // 
-            // browseButton
-            // 
-            this.browseButton.Location = new System.Drawing.Point(318, 22);
-            this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(26, 20);
-            this.browseButton.TabIndex = 2;
-            this.browseButton.Text = "...";
-            this.browseButton.UseVisualStyleBackColor = true;
-            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
             // 
             // p1DeviceCombo
             // 
@@ -196,7 +156,7 @@ namespace NoCableLauncher
             // 
             this.saveButton.BackColor = System.Drawing.Color.DimGray;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Location = new System.Drawing.Point(299, 430);
+            this.saveButton.Location = new System.Drawing.Point(299, 405);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(67, 24);
             this.saveButton.TabIndex = 17;
@@ -208,38 +168,13 @@ namespace NoCableLauncher
             // 
             this.cancelButton.BackColor = System.Drawing.Color.DimGray;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButton.Location = new System.Drawing.Point(299, 459);
+            this.cancelButton.Location = new System.Drawing.Point(299, 434);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(67, 24);
             this.cancelButton.TabIndex = 18;
             this.cancelButton.Text = "Close";
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "VID Offset";
-            // 
-            // offsetVidTextBox
-            // 
-            this.offsetVidTextBox.Location = new System.Drawing.Point(79, 94);
-            this.offsetVidTextBox.Name = "offsetVidTextBox";
-            this.offsetVidTextBox.Size = new System.Drawing.Size(86, 20);
-            this.offsetVidTextBox.TabIndex = 5;
-            this.offsetVidTextBox.TextChanged += new System.EventHandler(this._SettingsChanged);
-            // 
-            // offsetPidTextBox
-            // 
-            this.offsetPidTextBox.Location = new System.Drawing.Point(79, 119);
-            this.offsetPidTextBox.Name = "offsetPidTextBox";
-            this.offsetPidTextBox.Size = new System.Drawing.Size(86, 20);
-            this.offsetPidTextBox.TabIndex = 6;
-            this.offsetPidTextBox.TextChanged += new System.EventHandler(this._SettingsChanged);
             // 
             // player1GroupBox
             // 
@@ -252,7 +187,7 @@ namespace NoCableLauncher
             this.player1GroupBox.Controls.Add(this.p1pidTexBox);
             this.player1GroupBox.Controls.Add(this.p1vidTextBox);
             this.player1GroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.player1GroupBox.Location = new System.Drawing.Point(12, 162);
+            this.player1GroupBox.Location = new System.Drawing.Point(12, 137);
             this.player1GroupBox.Name = "player1GroupBox";
             this.player1GroupBox.Size = new System.Drawing.Size(354, 127);
             this.player1GroupBox.TabIndex = 8;
@@ -278,48 +213,20 @@ namespace NoCableLauncher
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.manualOffsetsCheckbox);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.pathTextBox);
-            this.groupBox2.Controls.Add(this.browseButton);
+            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.multiplayerCheckBox);
-            this.groupBox2.Controls.Add(this.offsetVidTextBox);
-            this.groupBox2.Controls.Add(this.steamCheckBox);
-            this.groupBox2.Controls.Add(this.offsetPidTextBox);
             this.groupBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox2.Location = new System.Drawing.Point(12, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(354, 151);
+            this.groupBox2.Size = new System.Drawing.Size(354, 129);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game";
             // 
-            // manualOffsetsCheckbox
-            // 
-            this.manualOffsetsCheckbox.AutoSize = true;
-            this.manualOffsetsCheckbox.Location = new System.Drawing.Point(79, 71);
-            this.manualOffsetsCheckbox.Name = "manualOffsetsCheckbox";
-            this.manualOffsetsCheckbox.Size = new System.Drawing.Size(97, 17);
-            this.manualOffsetsCheckbox.TabIndex = 8;
-            this.manualOffsetsCheckbox.Text = "Manual Offsets";
-            this.manualOffsetsCheckbox.UseVisualStyleBackColor = true;
-            this.manualOffsetsCheckbox.CheckedChanged += new System.EventHandler(this.manualOffsetsCheckbox_CheckedChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 122);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "PID Offset";
-            // 
             // multiplayerCheckBox
             // 
             this.multiplayerCheckBox.AutoSize = true;
-            this.multiplayerCheckBox.Location = new System.Drawing.Point(195, 48);
+            this.multiplayerCheckBox.Location = new System.Drawing.Point(19, 59);
             this.multiplayerCheckBox.Name = "multiplayerCheckBox";
             this.multiplayerCheckBox.Size = new System.Drawing.Size(112, 17);
             this.multiplayerCheckBox.TabIndex = 4;
@@ -331,7 +238,7 @@ namespace NoCableLauncher
             // 
             this.inputDevButton.BackColor = System.Drawing.Color.DimGray;
             this.inputDevButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inputDevButton.Location = new System.Drawing.Point(12, 431);
+            this.inputDevButton.Location = new System.Drawing.Point(12, 406);
             this.inputDevButton.Name = "inputDevButton";
             this.inputDevButton.Size = new System.Drawing.Size(114, 23);
             this.inputDevButton.TabIndex = 16;
@@ -351,7 +258,7 @@ namespace NoCableLauncher
             this.player2GroupBox.Controls.Add(this.p2pidTexBox);
             this.player2GroupBox.Controls.Add(this.p2vidTextBox);
             this.player2GroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.player2GroupBox.Location = new System.Drawing.Point(12, 295);
+            this.player2GroupBox.Location = new System.Drawing.Point(12, 270);
             this.player2GroupBox.Name = "player2GroupBox";
             this.player2GroupBox.Size = new System.Drawing.Size(355, 128);
             this.player2GroupBox.TabIndex = 8;
@@ -449,7 +356,7 @@ namespace NoCableLauncher
             // 
             this.launchGameButton.BackColor = System.Drawing.Color.DimGray;
             this.launchGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.launchGameButton.Location = new System.Drawing.Point(12, 460);
+            this.launchGameButton.Location = new System.Drawing.Point(12, 435);
             this.launchGameButton.Name = "launchGameButton";
             this.launchGameButton.Size = new System.Drawing.Size(114, 23);
             this.launchGameButton.TabIndex = 19;
@@ -467,7 +374,7 @@ namespace NoCableLauncher
             this.spOnBoardGroupBox.Controls.Add(this.spDisableEnableLabel);
             this.spOnBoardGroupBox.Controls.Add(this.spFakeMultiplayerLabel);
             this.spOnBoardGroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.spOnBoardGroupBox.Location = new System.Drawing.Point(12, 295);
+            this.spOnBoardGroupBox.Location = new System.Drawing.Point(12, 270);
             this.spOnBoardGroupBox.Name = "spOnBoardGroupBox";
             this.spOnBoardGroupBox.Size = new System.Drawing.Size(355, 128);
             this.spOnBoardGroupBox.TabIndex = 20;
@@ -554,7 +461,7 @@ namespace NoCableLauncher
             // 
             this.aboutButton.BackColor = System.Drawing.Color.DimGray;
             this.aboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aboutButton.Location = new System.Drawing.Point(178, 442);
+            this.aboutButton.Location = new System.Drawing.Point(178, 417);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(67, 24);
             this.aboutButton.TabIndex = 21;
@@ -566,7 +473,7 @@ namespace NoCableLauncher
             // 
             this.singlePlayerGroupBox.Controls.Add(this.label14);
             this.singlePlayerGroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.singlePlayerGroupBox.Location = new System.Drawing.Point(12, 295);
+            this.singlePlayerGroupBox.Location = new System.Drawing.Point(12, 270);
             this.singlePlayerGroupBox.Name = "singlePlayerGroupBox";
             this.singlePlayerGroupBox.Size = new System.Drawing.Size(355, 128);
             this.singlePlayerGroupBox.TabIndex = 23;
@@ -587,18 +494,75 @@ namespace NoCableLauncher
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(189, 471);
+            this.label11.Location = new System.Drawing.Point(185, 446);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 12);
+            this.label11.Size = new System.Drawing.Size(51, 12);
             this.label11.TabIndex = 24;
-            this.label11.Text = "NCL v2.0";
+            this.label11.Text = "NCL v2.0S";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.manualOffsetsCheckbox);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.offsetVidTextBox);
+            this.groupBox3.Controls.Add(this.offsetPidTextBox);
+            this.groupBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox3.Location = new System.Drawing.Point(166, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(182, 103);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Advanced";
+            // 
+            // manualOffsetsCheckbox
+            // 
+            this.manualOffsetsCheckbox.AutoSize = true;
+            this.manualOffsetsCheckbox.Location = new System.Drawing.Point(73, 20);
+            this.manualOffsetsCheckbox.Name = "manualOffsetsCheckbox";
+            this.manualOffsetsCheckbox.Size = new System.Drawing.Size(97, 17);
+            this.manualOffsetsCheckbox.TabIndex = 13;
+            this.manualOffsetsCheckbox.Text = "Manual Offsets";
+            this.manualOffsetsCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "PID Offset";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 43);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "VID Offset";
+            // 
+            // offsetVidTextBox
+            // 
+            this.offsetVidTextBox.Location = new System.Drawing.Point(73, 43);
+            this.offsetVidTextBox.Name = "offsetVidTextBox";
+            this.offsetVidTextBox.Size = new System.Drawing.Size(86, 20);
+            this.offsetVidTextBox.TabIndex = 11;
+            // 
+            // offsetPidTextBox
+            // 
+            this.offsetPidTextBox.Location = new System.Drawing.Point(73, 68);
+            this.offsetPidTextBox.Name = "offsetPidTextBox";
+            this.offsetPidTextBox.Size = new System.Drawing.Size(86, 20);
+            this.offsetPidTextBox.TabIndex = 12;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(378, 490);
+            this.ClientSize = new System.Drawing.Size(378, 469);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.launchGameButton);
@@ -632,17 +596,14 @@ namespace NoCableLauncher
             this.spOnBoardGroupBox.PerformLayout();
             this.singlePlayerGroupBox.ResumeLayout(false);
             this.singlePlayerGroupBox.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Label label1;
-        private TextBox pathTextBox;
-        private CheckBox steamCheckBox;
-        private Button browseButton;
         private ComboBox p1DeviceCombo;
         private Label label2;
         private TextBox p1vidTextBox;
@@ -652,9 +613,6 @@ namespace NoCableLauncher
         private CheckBox p1manualCheckBox;
         private Button saveButton;
         private Button cancelButton;
-        private Label label5;
-        private TextBox offsetVidTextBox;
-        private TextBox offsetPidTextBox;
         private GroupBox player1GroupBox;
         private OpenFileDialog openFileDialog1;
         private GroupBox groupBox2;
@@ -667,10 +625,8 @@ namespace NoCableLauncher
         private TextBox p2pidTexBox;
         private TextBox p2vidTextBox;
         private CheckBox multiplayerCheckBox;
-        private Label label6;
         private Button inputDevButton;
         private Label label12;
-        private CheckBox manualOffsetsCheckbox;
         private Button launchGameButton;
         private GroupBox spOnBoardGroupBox;
         private PictureBox refreshPictureBox1;
@@ -686,5 +642,11 @@ namespace NoCableLauncher
         private GroupBox singlePlayerGroupBox;
         private Label label14;
         private Label label11;
+        private GroupBox groupBox3;
+        private CheckBox manualOffsetsCheckbox;
+        private Label label6;
+        private Label label5;
+        private TextBox offsetVidTextBox;
+        private TextBox offsetPidTextBox;
     }
 }

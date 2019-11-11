@@ -162,29 +162,9 @@ namespace NoCableLauncher
 
         private static void StartGame()
         {
-            // Can't hook process at this moment
-            // We have to wait while game starts
-            if (!settings.isSteam)
-            {
-                if (File.Exists(settings.gamePath))
-                {
-                    var startInfo = new ProcessStartInfo
-                    {
-                        FileName = Path.GetFileNameWithoutExtension(settings.gamePath),
-                        WorkingDirectory = Path.GetDirectoryName(settings.gamePath)
-                    };
-
-                    Process.Start(startInfo);
-                }
-                else
-                {
-                    ExitWithError($"Exe file at \"{settings.gamePath}\" not found, check game path setting.");
-                }
-            }
-            else
-                //This do not return game process!
-                //Steam starts game with some delay
-                Process.Start(steamName);
+            //This do not return game process!
+            //Steam starts game with some delay
+            Process.Start(steamName);
         }
 
         //asd

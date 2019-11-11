@@ -99,10 +99,6 @@ namespace NoCableLauncher
             multiplayerCheckBox.Checked = Program.settings.Multiplayer;
             multiplayerCheckBox_CheckedChanged(null, e);
 
-            steamCheckBox.Checked = Program.settings.isSteam;
-
-            pathTextBox.Text = Program.settings.gamePath;
-
             manualOffsetsCheckbox.Checked = Program.settings.manualOffsets;
             offsetVidTextBox.Text = Program.settings.offsetVID;
             offsetPidTextBox.Text = Program.settings.offsetPID;
@@ -159,8 +155,8 @@ namespace NoCableLauncher
         {
             DeviceIDcheck();
 
-            Program.settings.gamePath = pathTextBox.Text;
-            Program.settings.isSteam = steamCheckBox.Checked;
+            //Program.settings.gamePath = pathTextBox.Text;
+            //Program.settings.isSteam = steamCheckBox.Checked;
 
             Program.settings.offsetVID = offsetVidTextBox.Text;
             Program.settings.offsetPID = offsetPidTextBox.Text;
@@ -208,22 +204,6 @@ namespace NoCableLauncher
             }, System.Threading.CancellationToken.None, TaskContinuationOptions.None, context);
         }
 
-
-        private void steamCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            pathTextBox.Text = Program.steamName;
-            pathTextBox.ReadOnly = steamCheckBox.Checked;
-            browseButton.Enabled = !steamCheckBox.Checked;
-            SettingsChanged = true;
-        }
-
-        private void browseButton_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                pathTextBox.Text = openFileDialog1.FileName;
-            }
-        }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {

@@ -5,7 +5,7 @@ This is an improved version based on the work originally done by [Maxx54](https:
 
 ### Changelog
 
-###### Version 2.0
+###### Version 2.0S
 
 - New logo
 - Crash fixes
@@ -18,7 +18,7 @@ This is an improved version based on the work originally done by [Maxx54](https:
 
 ### Downloads
 
-[NoCableLauncher Version 2.0](https://github.com/Mywk/NoCableLauncher/releases/download/2.0/NoCableLauncher.zip)
+[NoCableLauncher Version 2.0S](https://github.com/Mywk/NoCableLauncher/releases/download/2.0S/NoCableLauncher.zip)
 
 ### Getting Started
 
@@ -48,17 +48,15 @@ This allows you to use your microphone or any other device outside the game (ass
 
 ### Setting Tips
 
-![Settings Window](https://techcoders.net/images/content/ncl_screenshot.png)
+![Settings Window](https://techcoders.net/images/content/ncl_s_screenshot.png)
 
-* If you have Steam-licensed Rocksmith 2014, check the "Steam game" box, otherwise leave this checkbox and browse game EXE-file by pressing "..." button.
 * "Device" сombobox contains all **active** found input audio devices in your system. Select the device connected to your guitar. If your device is not in the list, check the "Manual" box and set VID & PID values manually (find it in "Device manager"). VID & PID sets as "0000" means default non-USB input audio device, for example integrated Realtek microphone input.
-* Press "OK" to save settings and close window or "Cancel" to close window without saving.
+* Press "OK" to save settings and close window or "Close" to close window without saving.
 * To play multiplayer, check "Enable Multiplayer" box in the settings window and set **different** input devices for Player1 and Player2, otherwise multiplayer will not work! To activate Player 2 in game, select "Multiplayer" from game menu and press Ctrl+M (global hotkey).
 
 
 ### Extra Info
 
-Working principle based on [this information](http://cs.rin.ru/forum/viewtopic.php?f=10&t=63705&p=1006201#p1006201).
 
 Multiplayer fix based on [AutoIt script](https://dl.dropboxusercontent.com/u/1288526/rocksmith2014_nocable_pbs.au3) by [phobos2077](https://github.com/phobos2077).
 
