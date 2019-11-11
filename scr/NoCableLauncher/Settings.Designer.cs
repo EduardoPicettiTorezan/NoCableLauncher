@@ -45,6 +45,12 @@ namespace NoCableLauncher
             this.refreshPictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.manualOffsetsCheckbox = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.offsetVidTextBox = new System.Windows.Forms.TextBox();
+            this.offsetPidTextBox = new System.Windows.Forms.TextBox();
             this.multiplayerCheckBox = new System.Windows.Forms.CheckBox();
             this.inputDevButton = new System.Windows.Forms.Button();
             this.player2GroupBox = new System.Windows.Forms.GroupBox();
@@ -70,20 +76,14 @@ namespace NoCableLauncher
             this.singlePlayerGroupBox = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.manualOffsetsCheckbox = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.offsetVidTextBox = new System.Windows.Forms.TextBox();
-            this.offsetPidTextBox = new System.Windows.Forms.TextBox();
             this.player1GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshPictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.player2GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshPictureBox2)).BeginInit();
             this.spOnBoardGroupBox.SuspendLayout();
             this.singlePlayerGroupBox.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // p1DeviceCombo
@@ -222,6 +222,63 @@ namespace NoCableLauncher
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.manualOffsetsCheckbox);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.offsetVidTextBox);
+            this.groupBox3.Controls.Add(this.offsetPidTextBox);
+            this.groupBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox3.Location = new System.Drawing.Point(166, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(182, 103);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Advanced";
+            // 
+            // manualOffsetsCheckbox
+            // 
+            this.manualOffsetsCheckbox.AutoSize = true;
+            this.manualOffsetsCheckbox.Location = new System.Drawing.Point(73, 20);
+            this.manualOffsetsCheckbox.Name = "manualOffsetsCheckbox";
+            this.manualOffsetsCheckbox.Size = new System.Drawing.Size(97, 17);
+            this.manualOffsetsCheckbox.TabIndex = 13;
+            this.manualOffsetsCheckbox.Text = "Manual Offsets";
+            this.manualOffsetsCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "PID Offset";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 43);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "VID Offset";
+            // 
+            // offsetVidTextBox
+            // 
+            this.offsetVidTextBox.Location = new System.Drawing.Point(73, 43);
+            this.offsetVidTextBox.Name = "offsetVidTextBox";
+            this.offsetVidTextBox.Size = new System.Drawing.Size(86, 20);
+            this.offsetVidTextBox.TabIndex = 11;
+            // 
+            // offsetPidTextBox
+            // 
+            this.offsetPidTextBox.Location = new System.Drawing.Point(73, 68);
+            this.offsetPidTextBox.Name = "offsetPidTextBox";
+            this.offsetPidTextBox.Size = new System.Drawing.Size(86, 20);
+            this.offsetPidTextBox.TabIndex = 12;
             // 
             // multiplayerCheckBox
             // 
@@ -494,68 +551,11 @@ namespace NoCableLauncher
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(185, 446);
+            this.label11.Location = new System.Drawing.Point(182, 446);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 12);
+            this.label11.Size = new System.Drawing.Size(59, 12);
             this.label11.TabIndex = 24;
-            this.label11.Text = "NCL v2.0S";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.manualOffsetsCheckbox);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.offsetVidTextBox);
-            this.groupBox3.Controls.Add(this.offsetPidTextBox);
-            this.groupBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox3.Location = new System.Drawing.Point(166, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(182, 103);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Advanced";
-            // 
-            // manualOffsetsCheckbox
-            // 
-            this.manualOffsetsCheckbox.AutoSize = true;
-            this.manualOffsetsCheckbox.Location = new System.Drawing.Point(73, 20);
-            this.manualOffsetsCheckbox.Name = "manualOffsetsCheckbox";
-            this.manualOffsetsCheckbox.Size = new System.Drawing.Size(97, 17);
-            this.manualOffsetsCheckbox.TabIndex = 13;
-            this.manualOffsetsCheckbox.Text = "Manual Offsets";
-            this.manualOffsetsCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 71);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "PID Offset";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "VID Offset";
-            // 
-            // offsetVidTextBox
-            // 
-            this.offsetVidTextBox.Location = new System.Drawing.Point(73, 43);
-            this.offsetVidTextBox.Name = "offsetVidTextBox";
-            this.offsetVidTextBox.Size = new System.Drawing.Size(86, 20);
-            this.offsetVidTextBox.TabIndex = 11;
-            // 
-            // offsetPidTextBox
-            // 
-            this.offsetPidTextBox.Location = new System.Drawing.Point(73, 68);
-            this.offsetPidTextBox.Name = "offsetPidTextBox";
-            this.offsetPidTextBox.Size = new System.Drawing.Size(86, 20);
-            this.offsetPidTextBox.TabIndex = 12;
+            this.label11.Text = "NCL v2.0.1S";
             // 
             // Settings
             // 
@@ -589,6 +589,8 @@ namespace NoCableLauncher
             ((System.ComponentModel.ISupportInitialize)(this.refreshPictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.player2GroupBox.ResumeLayout(false);
             this.player2GroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshPictureBox2)).EndInit();
@@ -596,8 +598,6 @@ namespace NoCableLauncher
             this.spOnBoardGroupBox.PerformLayout();
             this.singlePlayerGroupBox.ResumeLayout(false);
             this.singlePlayerGroupBox.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

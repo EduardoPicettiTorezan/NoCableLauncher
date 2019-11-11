@@ -21,10 +21,12 @@ namespace NoCableLauncher
         private bool loaded = false;
 
         private bool settingsChanged = false;
-        private bool SettingsChanged { 
+        private bool SettingsChanged
+        {
             get { return settingsChanged; }
-            set {
-                if(loaded)
+            set
+            {
+                if (loaded)
                     settingsChanged = value;
             }
         }
@@ -66,45 +68,45 @@ namespace NoCableLauncher
         {
             LoadDeviceList();
 
-            if (Program.settings.manualDev1)
+            if (Common.settings.manualDev1)
             {
-                p1vidTextBox.Text = Program.settings.VID;
-                p1pidTexBox.Text = Program.settings.PID;
+                p1vidTextBox.Text = Common.settings.VID;
+                p1pidTexBox.Text = Common.settings.PID;
                 p1manualCheckBox.Checked = true;
             }
             else
             {
                 if (Common.devices.Count != 0)
-                    p1DeviceCombo.SelectedIndex = Common.GetDeviceIndex(Program.settings.GUID1);
+                    p1DeviceCombo.SelectedIndex = Common.GetDeviceIndex(Common.settings.GUID1);
 
                 p1DeviceCombo_SelectionChangeCommitted(null, null);
                 p1manualCheckBox_CheckedChanged(null, e);
             }
 
-            if (Program.settings.manualDev2)
+            if (Common.settings.manualDev2)
             {
-                p2vidTextBox.Text = Program.settings.VID2;
-                p2pidTexBox.Text = Program.settings.PID2;
+                p2vidTextBox.Text = Common.settings.VID2;
+                p2pidTexBox.Text = Common.settings.PID2;
                 p2manualCheckBox.Checked = true;
             }
             else
             {
                 if (Common.devices.Count != 0)
-                    p2DeviceCombo.SelectedIndex = Common.GetDeviceIndex(Program.settings.GUID2);
+                    p2DeviceCombo.SelectedIndex = Common.GetDeviceIndex(Common.settings.GUID2);
 
                 p2DeviceCombo_SelectionChangeCommitted(null, null);
                 p2manualCheckBox_CheckedChanged(null, e);
             }
 
-            multiplayerCheckBox.Checked = Program.settings.Multiplayer;
+            multiplayerCheckBox.Checked = Common.settings.Multiplayer;
             multiplayerCheckBox_CheckedChanged(null, e);
 
-            manualOffsetsCheckbox.Checked = Program.settings.manualOffsets;
-            offsetVidTextBox.Text = Program.settings.offsetVID;
-            offsetPidTextBox.Text = Program.settings.offsetPID;
+            manualOffsetsCheckbox.Checked = Common.settings.manualOffsets;
+            offsetVidTextBox.Text = Common.settings.offsetVID;
+            offsetPidTextBox.Text = Common.settings.offsetPID;
             manualOffsetsCheckbox_CheckedChanged(null, e);
 
-            if(Program.settings.SingleplayerMode == 1)
+            if (Common.settings.SingleplayerMode == 1)
                 spDisableEnableRadioButton.Checked = true;
             else
                 spFakeMultiplayerRadioButton.Checked = true;
@@ -155,29 +157,26 @@ namespace NoCableLauncher
         {
             DeviceIDcheck();
 
-            //Program.settings.gamePath = pathTextBox.Text;
-            //Program.settings.isSteam = steamCheckBox.Checked;
+            Common.settings.offsetVID = offsetVidTextBox.Text;
+            Common.settings.offsetPID = offsetPidTextBox.Text;
+            Common.settings.manualOffsets = manualOffsetsCheckbox.Checked;
 
-            Program.settings.offsetVID = offsetVidTextBox.Text;
-            Program.settings.offsetPID = offsetPidTextBox.Text;
-            Program.settings.manualOffsets = manualOffsetsCheckbox.Checked;
+            Common.settings.VID = p1vidTextBox.Text;
+            Common.settings.PID = p1pidTexBox.Text;
+            Common.settings.manualDev1 = p1manualCheckBox.Checked;
 
-            Program.settings.VID = p1vidTextBox.Text;
-            Program.settings.PID = p1pidTexBox.Text;
-            Program.settings.manualDev1 = p1manualCheckBox.Checked;
+            Common.settings.Multiplayer = multiplayerCheckBox.Checked;
 
-            Program.settings.Multiplayer = multiplayerCheckBox.Checked;
+            Common.settings.VID2 = p2vidTextBox.Text;
+            Common.settings.PID2 = p2pidTexBox.Text;
+            Common.settings.manualDev2 = p2manualCheckBox.Checked;
 
-            Program.settings.VID2 = p2vidTextBox.Text;
-            Program.settings.PID2 = p2pidTexBox.Text;
-            Program.settings.manualDev2 = p2manualCheckBox.Checked;
+            Common.settings.GUID1 = Common.GetPDeviceId(p1DeviceCombo.SelectedIndex);
+            Common.settings.GUID2 = Common.GetPDeviceId(p2DeviceCombo.SelectedIndex);
 
-            Program.settings.GUID1 = Common.GetPDeviceId(p1DeviceCombo.SelectedIndex);
-            Program.settings.GUID2 = Common.GetPDeviceId(p2DeviceCombo.SelectedIndex);
+            Common.settings.SingleplayerMode = spDisableEnableRadioButton.Checked ? 1 : 0;
 
-            Program.settings.SingleplayerMode = spDisableEnableRadioButton.Checked ? 1 : 0;
-
-            Program.settings.Save();
+            Common.settings.Save();
 
             SettingsChanged = false;
         }
@@ -204,7 +203,6 @@ namespace NoCableLauncher
             }, System.Threading.CancellationToken.None, TaskContinuationOptions.None, context);
         }
 
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
             CheckIfSettingsChanged();
@@ -215,7 +213,7 @@ namespace NoCableLauncher
         {
             if (!multiplayerCheckBox.Checked)
             {
-                if(p1vidTextBox.Text == "0000" && p1pidTexBox.Text == "0000")
+                if (p1vidTextBox.Text == "0000" && p1pidTexBox.Text == "0000")
                     spOnBoardGroupBox.Visible = true;
                 else
                     spOnBoardGroupBox.Visible = false;
@@ -335,7 +333,7 @@ namespace NoCableLauncher
 
         private void spRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            Program.settings.SingleplayerMode = spDisableEnableRadioButton.Checked ? 1 : 0;
+            Common.settings.SingleplayerMode = spDisableEnableRadioButton.Checked ? 1 : 0;
             _SettingsChanged(sender, e);
         }
 
